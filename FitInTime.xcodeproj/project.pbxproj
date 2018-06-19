@@ -667,7 +667,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = QD5843FU5C;
 				INFOPLIST_FILE = FitInTime/Info.plist;
@@ -677,8 +677,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.joffrey.MyAppV2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "69c83ad2-1361-4d9e-a8de-1dea0fb9405a";
-				PROVISIONING_PROFILE_SPECIFIER = FitintimeDevelopment;
+				PROVISIONING_PROFILE = "7e48cc3e-4f8b-4bdb-9280-034746674af7";
+				PROVISIONING_PROFILE_SPECIFIER = FitintimeAppStore;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

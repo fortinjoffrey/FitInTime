@@ -53,7 +53,7 @@ class RunningTimerController: UIViewController {
     
     let stopButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("stop", for: .normal)
+        button.setTitle("Stop", for: .normal)
         button.setTitleColor(UIColor.white, for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
         button.backgroundColor = .outlineStrokeColor
@@ -191,7 +191,8 @@ class RunningTimerController: UIViewController {
     
     func setupCircleLayers() {
         
-        let shapeRadius: CGFloat = 130
+//        let shapeRadius: CGFloat = 130
+        let shapeRadius: CGFloat = view.frame.width / 3
         let lineWidth: CGFloat = 25
         
         shapeLayer = createCircleShapeLayer(strokeColor: .outlineStrokeColor, fillColor: .clear, radius: shapeRadius, lineWidth: lineWidth)
