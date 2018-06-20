@@ -82,29 +82,23 @@ extension TrainingsAutoUpdateController {
         }
         editAction.backgroundColor = .darkBlue
         
-        let config = UISwipeActionsConfiguration(actions: [deleteAction, editAction])
-        config.performsFirstActionWithFullSwipe = false
-        return config
-        
-    }
-    
-    override func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        
         let reportAction = UIContextualAction(style: .normal, title: "Résumé") { (action, view, success) in
-
+            
             let reportTrainingController = ReportTrainingController()
             reportTrainingController.modalPresentationStyle = .overFullScreen
             let training = self.fetchResultsController.object(at: indexPath)
             reportTrainingController.training = training
             self.present(reportTrainingController, animated: true, completion: nil)
-                        
+            
             success(true)
         }
         reportAction.backgroundColor = .blue
         
-        let leadingConfiguration = UISwipeActionsConfiguration(actions: [reportAction])
-        leadingConfiguration.performsFirstActionWithFullSwipe = true
-        return leadingConfiguration
+        
+        let config = UISwipeActionsConfiguration(actions: [deleteAction, editAction, reportAction])
+        config.performsFirstActionWithFullSwipe = false
+        return config
+        
     }
     
     override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {

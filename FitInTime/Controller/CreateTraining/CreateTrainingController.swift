@@ -52,6 +52,7 @@ class CreateTrainingController: UIViewController {
         tf.delegate = self
         tf.placeholder = "Ex: Jambes / Épaules"
         tf.textAlignment = .center
+        tf.inputAccessoryView = createKeyboardToolBar()
         tf.font = UIFont.systemFont(ofSize: 16)
         return tf
     }()
@@ -96,6 +97,7 @@ class CreateTrainingController: UIViewController {
         tf.delegate = self
         tf.text = ""
         tf.font = UIFont.systemFont(ofSize: 16)
+        tf.inputAccessoryView = createKeyboardToolBar()
         tf.backgroundColor = .white
         return tf
     }()
@@ -111,7 +113,7 @@ class CreateTrainingController: UIViewController {
     }
     
     fileprivate func setupNavBar() {
-        navigationItem.title = training == nil ? "Créer training" : "Modifier"
+        navigationItem.title = training == nil ? "Créer entraînement" : "Modifier"
         setupCancelButtonInNavBar()
         setupSaveButtonInNavBar(selector: #selector(handleSave))
     }
