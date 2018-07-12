@@ -28,7 +28,9 @@ class CreateTrainingController: UIViewController {
                 
                 endDatePicker.date = endDate
                 notationPicker.selectRow(Int(notation), inComponent: 0, animated: false)
+                notationPicker.selectedData = notation
                 tirednessNotationPicker.selectRow(Int(tirednessNotation), inComponent: 0, animated: false)
+                tirednessNotationPicker.selectedData = tirednessNotation
                 notesTextView.text = notes
             }
         }
@@ -71,26 +73,9 @@ class CreateTrainingController: UIViewController {
         return dp
     }()
     
-    let notationPicker: NotationPickerView = {
-        let pv = NotationPickerView()
-        pv.dataSource = pv
-        pv.delegate = pv
-        pv.selectRow(5, inComponent: 0, animated: false)
-        let rotationAngle: CGFloat = -.pi / 2
-        pv.transform = CGAffineTransform(rotationAngle: rotationAngle)
-        return pv
-    }()
+    let notationPicker: NotationPickerView = NotationPickerView()
     
-    let tirednessNotationPicker: NotationPickerView = {
-        let pv = NotationPickerView()
-        pv.dataSource = pv
-        pv.delegate = pv
-        pv.redToGreenMode = false
-        pv.selectRow(5, inComponent: 0, animated: false)
-        let rotationAngle: CGFloat = -.pi / 2
-        pv.transform = CGAffineTransform(rotationAngle: rotationAngle)
-        return pv
-    }()
+    let tirednessNotationPicker = NotationPickerView(redToGreenMode: false)        
     
     lazy var notesTextView: UITextView = {
         let tf = UITextView()

@@ -94,7 +94,7 @@ class ListExercicesAutoUpdateController: UIViewController, NSFetchedResultsContr
         setupNavBar()
         definesPresentationContext = true
         createDefaultsExercicesIfNeeded()
-    }        
+    }
     
     fileprivate func createDefaultsExercicesIfNeeded() {
         if UserDefaults.standard.object(forKey: "hasAlreadyBeenLauched") == nil {

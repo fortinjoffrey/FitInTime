@@ -18,41 +18,13 @@ class EvaluateTrainingController: UIViewController {
     var training: Training?
     var delegate: EvaluateTrainingControllerDelegate?
     
-    let visualEffectView: UIVisualEffectView = {
-        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.dark)
-        let visualEffectView = UIVisualEffectView(effect: blurEffect)
-        visualEffectView.alpha = 1
-        return visualEffectView
-    }()
+    let visualEffectView = BlurryVisualEffectView()
     
-    let mainView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .white
-        view.layer.masksToBounds = true
-        view.layer.cornerRadius = 10
-        return view
-    }()
+    let mainView = MainView()
     
-    let notationPicker: NotationPickerView = {
-        let pv = NotationPickerView()
-        pv.dataSource = pv
-        pv.delegate = pv
-        pv.selectRow(5, inComponent: 0, animated: false)
-        let rotationAngle: CGFloat = -.pi / 2
-        pv.transform = CGAffineTransform(rotationAngle: rotationAngle)
-        return pv
-    }()
+    let notationPicker: NotationPickerView = NotationPickerView()
     
-    let tirednessNotationPicker: NotationPickerView = {
-        let pv = NotationPickerView()
-        pv.dataSource = pv
-        pv.delegate = pv
-        pv.redToGreenMode = false
-        pv.selectRow(5, inComponent: 0, animated: false)
-        let rotationAngle: CGFloat = -.pi / 2
-        pv.transform = CGAffineTransform(rotationAngle: rotationAngle)
-        return pv
-    }()
+    let tirednessNotationPicker = NotationPickerView(redToGreenMode: false)
     
     let notesTextView: UITextView = {
         let tf = UITextView()

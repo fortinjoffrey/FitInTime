@@ -15,12 +15,7 @@ class CreateExerciceController: UIViewController {
     
     var mainViewOriginY: CGFloat = 0.0
     
-    let visualEffectView: UIVisualEffectView = {
-        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.dark)
-        let visualEffectView = UIVisualEffectView(effect: blurEffect)
-        visualEffectView.alpha = 1
-        return visualEffectView
-    }()
+    let visualEffectView = BlurryVisualEffectView()
     
     let dismissButton: UIButton = {
         let button = UIButton(type: .system)
@@ -29,13 +24,7 @@ class CreateExerciceController: UIViewController {
         return button
     }()
     
-    let mainView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .white
-        view.layer.masksToBounds = true
-        view.layer.cornerRadius = 10
-        return view
-    }()
+    let mainView = MainView()
     
     lazy var nameTextField: UITextField = {
         let textField = UITextField()

@@ -14,6 +14,24 @@ class NotationPickerView: UIPickerView {
     var selectedData: Int16 = 5
     var redToGreenMode = true
     
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.delegate = self
+        self.dataSource = self
+        let rotationAngle: CGFloat = -.pi / 2
+        self.transform = CGAffineTransform(rotationAngle: rotationAngle)
+        self.selectRow(Int(selectedData), inComponent: 0, animated: false)
+    }
+    
+    convenience init(redToGreenMode: Bool) {
+        self.init(frame: .zero)
+        self.redToGreenMode = redToGreenMode
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func layoutSubviews() {
         super.layoutSubviews()
         

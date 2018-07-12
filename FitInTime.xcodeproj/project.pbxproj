@@ -33,6 +33,10 @@
 		DD5CD28C20BC4FA500213BD3 /* ExercicesController+ListExercicesAutoUpdateControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5CD28B20BC4FA500213BD3 /* ExercicesController+ListExercicesAutoUpdateControllerDelegate.swift */; };
 		DD5CD28E20BE038F00213BD3 /* ListExercicesAutoUpdateController+Exercices.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5CD28D20BE038F00213BD3 /* ListExercicesAutoUpdateController+Exercices.swift */; };
 		DD6B489B209BB5740002C07F /* RepsWeightCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6B489A209BB5740002C07F /* RepsWeightCell.swift */; };
+		DD8F03AF20F7FF1700DE9EAB /* BlurryVisualEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8F03AE20F7FF1700DE9EAB /* BlurryVisualEffectView.swift */; };
+		DD8F03B120F808B200DE9EAB /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8F03B020F808B200DE9EAB /* MainView.swift */; };
+		DD8F03B420F80D7A00DE9EAB /* PerformancesTypeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8F03B320F80D7A00DE9EAB /* PerformancesTypeLabel.swift */; };
+		DD8F03B620F80D9300DE9EAB /* PerformancesValueLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8F03B520F80D9300DE9EAB /* PerformancesValueLabel.swift */; };
 		DDA4DB3920AD7FD20090E5FB /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA4DB3820AD7FD20090E5FB /* SettingsController.swift */; };
 		DDA4DB3B20AD804B0090E5FB /* SettingsSubtitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA4DB3A20AD804B0090E5FB /* SettingsSubtitleCell.swift */; };
 		DDA4DB3D20AD80960090E5FB /* SettingsRightDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA4DB3C20AD80960090E5FB /* SettingsRightDetailCell.swift */; };
@@ -99,6 +103,10 @@
 		DD5CD28B20BC4FA500213BD3 /* ExercicesController+ListExercicesAutoUpdateControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ExercicesController+ListExercicesAutoUpdateControllerDelegate.swift"; sourceTree = "<group>"; };
 		DD5CD28D20BE038F00213BD3 /* ListExercicesAutoUpdateController+Exercices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListExercicesAutoUpdateController+Exercices.swift"; sourceTree = "<group>"; };
 		DD6B489A209BB5740002C07F /* RepsWeightCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepsWeightCell.swift; sourceTree = "<group>"; };
+		DD8F03AE20F7FF1700DE9EAB /* BlurryVisualEffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurryVisualEffectView.swift; sourceTree = "<group>"; };
+		DD8F03B020F808B200DE9EAB /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		DD8F03B320F80D7A00DE9EAB /* PerformancesTypeLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformancesTypeLabel.swift; sourceTree = "<group>"; };
+		DD8F03B520F80D9300DE9EAB /* PerformancesValueLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformancesValueLabel.swift; sourceTree = "<group>"; };
 		DDA4DB3820AD7FD20090E5FB /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 		DDA4DB3A20AD804B0090E5FB /* SettingsSubtitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSubtitleCell.swift; sourceTree = "<group>"; };
 		DDA4DB3C20AD80960090E5FB /* SettingsRightDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRightDetailCell.swift; sourceTree = "<group>"; };
@@ -241,6 +249,15 @@
 			path = CreateExercice;
 			sourceTree = "<group>";
 		};
+		DD8F03B220F80D6E00DE9EAB /* Labels */ = {
+			isa = PBXGroup;
+			children = (
+				DD8F03B320F80D7A00DE9EAB /* PerformancesTypeLabel.swift */,
+				DD8F03B520F80D9300DE9EAB /* PerformancesValueLabel.swift */,
+			);
+			path = Labels;
+			sourceTree = "<group>";
+		};
 		DDA4DB5C20ADBBED0090E5FB /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -301,6 +318,7 @@
 		DDAB7D4A20A0B9000022CF34 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				DD8F03B220F80D6E00DE9EAB /* Labels */,
 				DD2808DD209344F700D14DE3 /* NotationPickerView.swift */,
 				DDE0CE26209E1D6600F7C82D /* BodyweightCell.swift */,
 				DDE0CE24209E1A8500F7C82D /* CardioCell.swift */,
@@ -311,6 +329,8 @@
 				DDA4DB3A20AD804B0090E5FB /* SettingsSubtitleCell.swift */,
 				DDA4DB3C20AD80960090E5FB /* SettingsRightDetailCell.swift */,
 				DDBB8C0320C0405400B6B04F /* GroupCell.swift */,
+				DD8F03AE20F7FF1700DE9EAB /* BlurryVisualEffectView.swift */,
+				DD8F03B020F808B200DE9EAB /* MainView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -469,6 +489,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD5CD28C20BC4FA500213BD3 /* ExercicesController+ListExercicesAutoUpdateControllerDelegate.swift in Sources */,
+				DD8F03B120F808B200DE9EAB /* MainView.swift in Sources */,
 				DD51891520D45EBE009E067A /* EvaluateTrainingController+UI.swift in Sources */,
 				DD2573C020920ACF00AA6AB6 /* TrainingsController+UITableView.swift in Sources */,
 				DDAB7D4220A03A8E0022CF34 /* SelectionCell.swift in Sources */,
@@ -477,6 +498,7 @@
 				DD5CD27E20BC277000213BD3 /* ListExercicesAutoUpdateController+UITableView.swift in Sources */,
 				DD2808D520931AD000D14DE3 /* TrainingsAutoUpdateController.swift in Sources */,
 				DD586A3F209707F600A81F9E /* ExercicesController.swift in Sources */,
+				DD8F03AF20F7FF1700DE9EAB /* BlurryVisualEffectView.swift in Sources */,
 				DD2573C220920B3100AA6AB6 /* TrainingsController+CreateTraining.swift in Sources */,
 				DDBE6CA62091BE3000C14200 /* CreateTrainingController.swift in Sources */,
 				DD586A41209708EC00A81F9E /* ExercicesController+UITableView.swift in Sources */,
@@ -495,6 +517,7 @@
 				DD586A46209711D000A81F9E /* ExercicesController+Delegate.swift in Sources */,
 				DD5CD27C20BC25EB00213BD3 /* ListExercicesAutoUpdateController.swift in Sources */,
 				DDFBC7BA209B376F001D464C /* CreateSetController.swift in Sources */,
+				DD8F03B420F80D7A00DE9EAB /* PerformancesTypeLabel.swift in Sources */,
 				DD309CC620C00D800011A464 /* ReportTrainingController.swift in Sources */,
 				DDE0CE25209E1A8500F7C82D /* CardioCell.swift in Sources */,
 				DDA4DB3D20AD80960090E5FB /* SettingsRightDetailCell.swift in Sources */,
@@ -529,6 +552,7 @@
 				DDE0CE27209E1D6600F7C82D /* BodyweightCell.swift in Sources */,
 				DD4276D520C0311A000F6FD5 /* ReportTrainingController+UICollectionView.swift in Sources */,
 				DD5CD28E20BE038F00213BD3 /* ListExercicesAutoUpdateController+Exercices.swift in Sources */,
+				DD8F03B620F80D9300DE9EAB /* PerformancesValueLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

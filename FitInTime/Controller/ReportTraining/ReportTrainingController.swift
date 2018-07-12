@@ -64,11 +64,7 @@ class ReportTrainingController: UIViewController {
     let collectionViewSpacing: CGFloat = 4
     var collectionViewHeight: CGFloat = 0
     
-    let visualEffectView: UIVisualEffectView = {
-        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.dark)
-        let visualEffectView = UIVisualEffectView(effect: blurEffect)
-        return visualEffectView
-    }()
+    let visualEffectView = BlurryVisualEffectView()
     
     let scrollView: UIScrollView = {
         let scrollView = UIScrollView()

@@ -14,6 +14,10 @@ protocol CreateSetControllerDelegate {
     func didEditSet(set: Set)
 }
 
+
+
+
+
 class CreateSetController: UIViewController {
     
     var trainingIsDone: Bool = false
@@ -23,21 +27,10 @@ class CreateSetController: UIViewController {
         }
     }
     var mainViewOriginY: CGFloat = 0.0
+
+    let visualEffectView = BlurryVisualEffectView()
     
-    let visualEffectView: UIVisualEffectView = {
-        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.dark)
-        let visualEffectView = UIVisualEffectView(effect: blurEffect)
-        visualEffectView.alpha = 1
-        return visualEffectView
-    }()
-    
-    let mainView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .white
-        view.layer.masksToBounds = true
-        view.layer.cornerRadius = 10
-        return view
-    }()
+    let mainView = MainView()
     
     let dismissButton: UIButton = {
         let button = UIButton(type: .system)
@@ -46,93 +39,24 @@ class CreateSetController: UIViewController {
         return button
     }()
     
+    
     // MARK: Labels
-    let repsLabel: UILabel = {
-        let label = UILabel()
-        label.text = "reps".uppercased()
-        label.textAlignment = .center
-        label.font = UIFont.boldSystemFont(ofSize: 12)
-        return label
-    }()
-    let weightLabel: UILabel = {
-        let label = UILabel()
-        label.text = "KGS"
-        label.textAlignment = .center
-        label.font = UIFont.boldSystemFont(ofSize: 12)
-        return label
-    }()
-    let durationLabel: UILabel = {
-        let label = UILabel()
-        label.text = "minutes".uppercased()
-        label.textAlignment = .center
-        label.font = UIFont.boldSystemFont(ofSize: 12)
-        return label
-    }()
-    let speedLabel: UILabel = {
-        let label = UILabel()
-        label.text = "km / h".uppercased()
-        label.textAlignment = .center
-        label.font = UIFont.boldSystemFont(ofSize: 12)
-        return label
-    }()
-    let gainageMinutesLabel: UILabel = {
-        let label = UILabel()
-        label.text = "minutes".uppercased()
-        label.textAlignment = .center
-        label.font = UIFont.boldSystemFont(ofSize: 12)
-        return label
-    }()
-    let gainageSecondsLabel: UILabel = {
-        let label = UILabel()
-        label.text = "secondes".uppercased()
-        label.textAlignment = .center
-        label.font = UIFont.boldSystemFont(ofSize: 12)
-        return label
-    }()
+    
+    let repsLabel = PerformancesTypeLabel(text: "reps")
+    let weightLabel = PerformancesTypeLabel(text: "kgs")
+    let durationLabel = PerformancesTypeLabel(text: "minutes")
+    let speedLabel = PerformancesTypeLabel(text: "km / h")
+    let gainageMinutesLabel = PerformancesTypeLabel(text: "minutes")
+    let gainageSecondsLabel  = PerformancesTypeLabel(text: "secondes")
     
     // MARK: Value Labels
-    let repsValueLabel: UILabel = {
-        let label = UILabel()
-        label.text = "10"
-        label.textAlignment = .center
-        label.font = UIFont.boldSystemFont(ofSize: 30)
-        return label
-    }()
-    let weightValueLabel: UILabel = {
-        let label = UILabel()
-        label.text = "24"
-        label.textAlignment = .center
-        label.font = UIFont.boldSystemFont(ofSize: 30)
-        return label
-    }()
-    let durationValueLabel: UILabel = {
-        let label = UILabel()
-        label.text = "15"
-        label.textAlignment = .center
-        label.font = UIFont.boldSystemFont(ofSize: 30)
-        return label
-    }()
-    let speedValueLabel: UILabel = {
-        let label = UILabel()
-        label.text = "12"
-        label.textAlignment = .center
-        label.font = UIFont.boldSystemFont(ofSize: 30)
-        return label
-    }()
-    let gainageMinutesValueLabel: UILabel = {
-        let label = UILabel()
-        label.text = "0"
-        label.textAlignment = .center
-        label.font = UIFont.boldSystemFont(ofSize: 30)
-        return label
-    }()
-    let gainageSecondsValueLabel: UILabel = {
-        let label = UILabel()
-        label.text = "30"
-        label.textAlignment = .center
-        label.font = UIFont.boldSystemFont(ofSize: 30)
-        return label
-    }()
+    let repsValueLabel = PerformancesValueLabel(text: "10")
+    let weightValueLabel = PerformancesValueLabel(text: "24")
+    let durationValueLabel = PerformancesValueLabel(text: "15")
+    let speedValueLabel  = PerformancesValueLabel(text: "12")
+    let gainageMinutesValueLabel = PerformancesValueLabel(text: "0")
+    let gainageSecondsValueLabel = PerformancesValueLabel(text: "30")
+    
     
     // MARK: Picker Data Variables
     var repsPickerData = [Int16]()

@@ -23,12 +23,21 @@ extension ListExercicesAutoUpdateController: UISearchBarDelegate {
         try? fetchResultsController.performFetch()
         tableView.reloadData()
     }
+   
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        
         fetchResultsController.fetchRequest.predicate = NSPredicate(format: "isListed = true")
         try? fetchResultsController.performFetch()
         tableView.reloadData()
+        
     }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchController.dismiss(animated: true, completion: nil)
+    }
+    
+    
 }
 
 /*
