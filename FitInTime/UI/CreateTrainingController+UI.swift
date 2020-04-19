@@ -72,6 +72,9 @@ extension CreateTrainingController {
         stackView.anchor(top: startDatePicker.bottomAnchor, left: scrollContainerView.leftAnchor, bottom: nil, right: scrollContainerView.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 350)
         
         notesTextView.anchor(top: stackView.bottomAnchor, left: scrollContainerView.leftAnchor, bottom: nil, right: scrollContainerView.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 200)
+        
+        setupValidateButton(pView: scrollContainerView)
+
     }
     
     fileprivate func setupMinimalUI() -> UIView {
@@ -79,28 +82,46 @@ extension CreateTrainingController {
         let nameLabel = createLabel(for: "Nom de la séance")
         let startDateLabel = createLabel(for: "Entrez l'heure de début")
         
-        
-        
-        
-        
         view.addSubview(scrollView)
+        
+        scrollView.backgroundColor = .lightBlue
         
         scrollView.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
         
         let scrollContainerView = UIView()
         scrollContainerView.backgroundColor = .lightBlue
-        
+
         scrollView.addSubview(scrollContainerView)
-        
-        scrollContainerView.anchor(top: scrollView.topAnchor, left: scrollView.leftAnchor, bottom: scrollView.bottomAnchor, right: scrollView.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: view.frame.width, height: 800)
+
+        let scrollContainerViewHeight: CGFloat = isDone ?? true ? 840 : 300
+
+        scrollContainerView.anchor(top: scrollView.topAnchor, left: scrollView.leftAnchor, bottom: scrollView.bottomAnchor, right: scrollView.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: view.frame.width, height: scrollContainerViewHeight)
         
         let views = [nameLabel, nameTextField, startDateLabel, startDatePicker]
         let stackView = createStackView(with: views, for: .vertical)
         
-        scrollContainerView.addSubview(stackView)
+        scrollView.addSubview(stackView)
         stackView.anchor(top: scrollContainerView.topAnchor, left: scrollContainerView.leftAnchor, bottom: nil, right: scrollContainerView.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 215)
+        
+        if (!(isDone ?? false)) {
+            setupValidateButton()
+        }
   
         return scrollContainerView
+    }
+    
+    func setupValidateButton(pView: UIView? = nil) {
+        if let view = pView {
+            view.addSubview(validateButton)
+            
+            validateButton.anchor(top: nil, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 16, paddingBottom: 0, paddingRight: 16, width: 0, height: 50)
+        } else {
+            
+            self.view.addSubview(validateButton)
+            
+            validateButton.anchor(top: nil, left: self.view.leftAnchor, bottom: self.view.bottomAnchor, right: self.view.rightAnchor, paddingTop: 0, paddingLeft: 16, paddingBottom: 32, paddingRight: 16, width: 0, height: 50)
+        }
+        
     }
 }
 

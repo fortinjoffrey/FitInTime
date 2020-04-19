@@ -87,6 +87,12 @@ class CreateTrainingController: UIViewController {
         return tf
     }()
     
+    let validateButton: ValidateButton = {
+        let button = ValidateButton(type: .system)
+        button.addTarget(self, action: #selector(handleSave), for: .touchUpInside)
+        return button
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()        
         view.backgroundColor = .darkBlue
@@ -99,6 +105,8 @@ class CreateTrainingController: UIViewController {
     
     fileprivate func setupNavBar() {
         navigationItem.title = training == nil ? "Créer entraînement" : "Modifier"
+        navigationController?.navigationBar.backgroundColor = .orangeCustom
+        navigationController?.setStatusBarColor(backgroundColor: .orangeCustom)
         setupCancelButtonInNavBar()
         setupSaveButtonInNavBar(selector: #selector(handleSave))
     }

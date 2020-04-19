@@ -19,6 +19,7 @@
 		DD2808DE209344F700D14DE3 /* NotationPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2808DD209344F700D14DE3 /* NotationPickerView.swift */; };
 		DD309CC620C00D800011A464 /* ReportTrainingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD309CC520C00D800011A464 /* ReportTrainingController.swift */; };
 		DD309CC820C00DD30011A464 /* ReportTrainingController+UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD309CC720C00DD30011A464 /* ReportTrainingController+UITableView.swift */; };
+		DD3F4195244C7DDF00CB58D3 /* ValidateButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3F4194244C7DDF00CB58D3 /* ValidateButton.swift */; };
 		DD4276D520C0311A000F6FD5 /* ReportTrainingController+UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4276D420C0311A000F6FD5 /* ReportTrainingController+UICollectionView.swift */; };
 		DD51891520D45EBE009E067A /* EvaluateTrainingController+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD51891420D45EBE009E067A /* EvaluateTrainingController+UI.swift */; };
 		DD51891720D464B9009E067A /* ExercicesController+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD51891620D464B9009E067A /* ExercicesController+UI.swift */; };
@@ -89,6 +90,7 @@
 		DD2808DD209344F700D14DE3 /* NotationPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotationPickerView.swift; sourceTree = "<group>"; };
 		DD309CC520C00D800011A464 /* ReportTrainingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportTrainingController.swift; sourceTree = "<group>"; };
 		DD309CC720C00DD30011A464 /* ReportTrainingController+UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ReportTrainingController+UITableView.swift"; sourceTree = "<group>"; };
+		DD3F4194244C7DDF00CB58D3 /* ValidateButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateButton.swift; sourceTree = "<group>"; };
 		DD4276D420C0311A000F6FD5 /* ReportTrainingController+UICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ReportTrainingController+UICollectionView.swift"; sourceTree = "<group>"; };
 		DD51891420D45EBE009E067A /* EvaluateTrainingController+UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EvaluateTrainingController+UI.swift"; sourceTree = "<group>"; };
 		DD51891620D464B9009E067A /* ExercicesController+UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ExercicesController+UI.swift"; sourceTree = "<group>"; };
@@ -190,6 +192,14 @@
 				DD4276D420C0311A000F6FD5 /* ReportTrainingController+UICollectionView.swift */,
 			);
 			path = ReportTraining;
+			sourceTree = "<group>";
+		};
+		DD3F4193244C7DD100CB58D3 /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				DD3F4194244C7DDF00CB58D3 /* ValidateButton.swift */,
+			);
+			path = Button;
 			sourceTree = "<group>";
 		};
 		DD5494E020B97AD900782AFA /* CreateSet */ = {
@@ -318,6 +328,7 @@
 		DDAB7D4A20A0B9000022CF34 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				DD3F4193244C7DD100CB58D3 /* Button */,
 				DD8F03B220F80D6E00DE9EAB /* Labels */,
 				DD2808DD209344F700D14DE3 /* NotationPickerView.swift */,
 				DDE0CE26209E1D6600F7C82D /* BodyweightCell.swift */,
@@ -459,7 +470,9 @@
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				en,
 				Base,
+				fr,
 			);
 			mainGroup = DDBE6C7F2091BCE700C14200;
 			productRefGroup = DDBE6C892091BCE700C14200 /* Products */;
@@ -499,6 +512,7 @@
 				DD2808D520931AD000D14DE3 /* TrainingsAutoUpdateController.swift in Sources */,
 				DD586A3F209707F600A81F9E /* ExercicesController.swift in Sources */,
 				DD8F03AF20F7FF1700DE9EAB /* BlurryVisualEffectView.swift in Sources */,
+				DD3F4195244C7DDF00CB58D3 /* ValidateButton.swift in Sources */,
 				DD2573C220920B3100AA6AB6 /* TrainingsController+CreateTraining.swift in Sources */,
 				DDBE6CA62091BE3000C14200 /* CreateTrainingController.swift in Sources */,
 				DD586A41209708EC00A81F9E /* ExercicesController+UITableView.swift in Sources */,

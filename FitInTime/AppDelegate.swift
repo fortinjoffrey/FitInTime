@@ -65,12 +65,14 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     }
     
     fileprivate func setupNavBarAppearance() {
-        UINavigationBar.appearance().tintColor = .white
-        UINavigationBar.appearance().isTranslucent = false
-        UINavigationBar.appearance().barTintColor = .orangeCustom
-        UINavigationBar.appearance().prefersLargeTitles = true
-        UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
-        UINavigationBar.appearance().largeTitleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
+        let navigationBarAppearance = UINavigationBar.appearance()
+        
+        navigationBarAppearance.tintColor = .white
+        navigationBarAppearance.isTranslucent = false
+        navigationBarAppearance.barTintColor = .orangeCustom
+        navigationBarAppearance.prefersLargeTitles = true
+        navigationBarAppearance.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
+        navigationBarAppearance.largeTitleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
     }
     
     fileprivate func setupNotificationRequestAndDelegate() {
