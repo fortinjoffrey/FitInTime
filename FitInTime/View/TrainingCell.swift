@@ -19,11 +19,11 @@ class TrainingCell: UITableViewCell {
             
             if let isDone = training?.isDone {
                 if isDone {
-                    accessoryType = UITableViewCellAccessoryType.checkmark
+                    accessoryType = UITableViewCell.AccessoryType.checkmark
                     stateView.backgroundColor = .blueCustom
                     stateLabel.text = "TERMINÉ"
                 } else {
-                    accessoryType = UITableViewCellAccessoryType.disclosureIndicator
+                    accessoryType = UITableViewCell.AccessoryType.disclosureIndicator
                     stateView.backgroundColor = .red
                     stateLabel.text = "EN COURS"
                 }
@@ -36,9 +36,9 @@ class TrainingCell: UITableViewCell {
             dateFormatter.dateFormat = "MMMM"
             let monthString = dateFormatter.string(from: startDate)
             
-            let attributedText = NSMutableAttributedString(string: "\(dayString)\n", attributes: [NSAttributedStringKey.font:UIFont.boldSystemFont(ofSize: 14)])
+            let attributedText = NSMutableAttributedString(string: "\(dayString)\n", attributes: [NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 14)])
             
-            attributedText.append(NSAttributedString(string: monthString.uppercased(), attributes: [NSAttributedStringKey.font:UIFont.systemFont(ofSize: UIFont.systemFontSize - 3), NSAttributedStringKey.foregroundColor:UIColor.gray]))
+            attributedText.append(NSAttributedString(string: monthString.uppercased(), attributes: [NSAttributedString.Key.font:UIFont.systemFont(ofSize: UIFont.systemFontSize - 3), NSAttributedString.Key.foregroundColor:UIColor.gray]))
             
             dateLabel.attributedText = attributedText
             
@@ -94,7 +94,7 @@ class TrainingCell: UITableViewCell {
         return view
     }()
     
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         backgroundColor = .white

@@ -8,7 +8,6 @@
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="primaryGroup" optional="YES" attributeType="String"/>
         <attribute name="secondaryGroup" optional="YES" attributeType="String"/>
-        <relationship name="lastSet" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Set"/>
         <relationship name="sets" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Set" inverseName="exercice" inverseEntity="Set"/>
         <relationship name="training" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Training" inverseName="exercices" inverseEntity="Training"/>
     </entity>
@@ -32,7 +31,7 @@
         <relationship name="exercices" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Exercice" inverseName="training" inverseEntity="Exercice"/>
     </entity>
     <elements>
-        <element name="Exercice" positionX="-54" positionY="45" width="128" height="193"/>
+        <element name="Exercice" positionX="-54" positionY="45" width="128" height="178"/>
         <element name="Set" positionX="99" positionY="63" width="128" height="133"/>
         <element name="Training" positionX="259" positionY="-9" width="128" height="180"/>
     </elements>

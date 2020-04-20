@@ -15,9 +15,9 @@ class SelectionCell: UICollectionViewCell {
             guard let seconds = timer?.seconds else { return }
             guard let minutes = timer?.minutes else { return }
             
-            let boldAttributes: [NSAttributedStringKey:Any] = [NSAttributedStringKey.font:UIFont.boldSystemFont(ofSize: 18), NSAttributedStringKey.foregroundColor:UIColor.gray]
+            let boldAttributes: [NSAttributedString.Key:Any] = [NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 18), NSAttributedString.Key.foregroundColor:UIColor.gray]
             
-            let valueAttributes: [NSAttributedStringKey:Any] = [NSAttributedStringKey.font:UIFont.boldSystemFont(ofSize: 28), NSAttributedStringKey.foregroundColor:UIColor.black]
+            let valueAttributes: [NSAttributedString.Key:Any] = [NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 28), NSAttributedString.Key.foregroundColor:UIColor.black]
             
             var attributedText = NSMutableAttributedString(attributedString: NSAttributedString(string: ""))
             

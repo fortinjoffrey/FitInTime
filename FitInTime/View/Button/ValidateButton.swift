@@ -14,7 +14,7 @@ class ValidateButton : UIButton {
           super.init(frame: frame)
     }
     
-    convenience init(type: UIButtonType) {
+    convenience init(type: UIButton.ButtonType) {
         self.init(frame: .zero)
         setTitle("Valider", for: .normal)
         setTitleColor(UIColor.white, for: .normal)

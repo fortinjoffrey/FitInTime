@@ -11,7 +11,7 @@ import UIKit
 extension TrainingsController: CreateTrainingControllerDelegate {
     
     func didEditTraining(training: Training) {
-        guard let row = trainings.index(of: training) else { return }
+        guard let row = trainings.firstIndex(of: training) else { return }
         let reloadIndexPath = IndexPath(row: row, section: 0)
         tableView.reloadRows(at: [reloadIndexPath], with: .fade)
     }

@@ -54,7 +54,7 @@ extension TrainingsAutoUpdateController {
         let deleteAction = UIContextualAction(style: .normal, title: "Supprimer") { (action, view, success) in
             
             let alertController = UIAlertController(title: "Êtes-vous sur ?", message: "Cette action est irréversible", preferredStyle: .alert)
-            alertController.addAction(UIAlertAction(title: "Annuler", style: UIAlertActionStyle.cancel, handler: { (action) in
+            alertController.addAction(UIAlertAction(title: "Annuler", style: UIAlertAction.Style.cancel, handler: { (action) in
                 alertController.dismiss(animated: true, completion: nil)
                 success(true)
             }))

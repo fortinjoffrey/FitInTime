@@ -209,7 +209,7 @@ class RunningTimerController: UIViewController {
         layer.strokeColor = strokeColor.cgColor
         layer.lineWidth = lineWidth
         layer.fillColor = fillColor.cgColor
-        layer.lineCap = kCALineCapRound
+        layer.lineCap = CAShapeLayerLineCap.round
 
         layer.position = view.center
         view.layer.addSublayer(layer)

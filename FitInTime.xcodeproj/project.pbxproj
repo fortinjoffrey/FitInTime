@@ -497,6 +497,7 @@
 				TargetAttributes = {
 					DDBE6C872091BCE700C14200 = {
 						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 1140;
 					};
 				};
 			};
@@ -761,7 +762,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "69c83ad2-1361-4d9e-a8de-1dea0fb9405a";
 				PROVISIONING_PROFILE_SPECIFIER = FitintimeDevelopment;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -782,7 +783,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "7e48cc3e-4f8b-4bdb-9280-034746674af7";
 				PROVISIONING_PROFILE_SPECIFIER = FitintimeAppStore;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

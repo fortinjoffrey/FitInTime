@@ -62,7 +62,7 @@ extension ListExercicesAutoUpdateController: UITableViewDataSource, UITableViewD
         
         let exercice = fetchResultsController.object(at: indexPath)
         
-        if let index = selectedExercices.index(of: exercice) {
+        if let index = selectedExercices.firstIndex(of: exercice) {
             selectedExercices.remove(at: index)
             cell.accessoryType = .none
         } else {

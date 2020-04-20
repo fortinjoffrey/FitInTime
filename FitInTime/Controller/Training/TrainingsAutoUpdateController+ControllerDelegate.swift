@@ -66,7 +66,9 @@ extension TrainingsAutoUpdateController {
             break
         case .update:
             break
-        }
+        default:
+            break
+    }
     }
     
     func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
@@ -79,6 +81,8 @@ extension TrainingsAutoUpdateController {
             tableView.reloadRows(at: [indexPath!], with: .middle)
         case .move:
             tableView.moveRow(at: indexPath!, to: newIndexPath!)
+        default:
+            break
         }
     }
     

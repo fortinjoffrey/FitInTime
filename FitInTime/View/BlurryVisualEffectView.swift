@@ -11,7 +11,7 @@ import UIKit
 class BlurryVisualEffectView: UIVisualEffectView {
     
     init() {
-        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.dark)
+        let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.dark)
         super.init(effect: blurEffect)
     }
     

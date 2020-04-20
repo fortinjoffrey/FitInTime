@@ -40,7 +40,7 @@ extension UIViewController {
         let content = UNMutableNotificationContent()
         content.title = title
         content.body = body
-        content.sound = UNNotificationSound.default()
+        content.sound = UNNotificationSound.default
         
         let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
         UNUserNotificationCenter.current().add(request) { (err) in
@@ -59,7 +59,7 @@ extension UIViewController {
         return label
     }
     
-    func createStackView(with views: [UIView], for axis: UILayoutConstraintAxis) -> UIStackView {
+    func createStackView(with views: [UIView], for axis: NSLayoutConstraint.Axis) -> UIStackView {
         let stackView = UIStackView(arrangedSubviews: views)
         stackView.distribution = .fillEqually
         stackView.axis = axis
@@ -68,9 +68,9 @@ extension UIViewController {
     
     func setupBlackBoldAttributedText(for label: UILabel, firstString: String, secondString: String, size: CGFloat) {
         
-        let attributedText = NSMutableAttributedString(string: firstString, attributes: [NSAttributedStringKey.foregroundColor:UIColor.black, NSAttributedStringKey.font:UIFont.boldSystemFont(ofSize: size)])
+        let attributedText = NSMutableAttributedString(string: firstString, attributes: [NSAttributedString.Key.foregroundColor:UIColor.black, NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: size)])
         
-        attributedText.append(NSAttributedString(string: secondString, attributes: [NSAttributedStringKey.foregroundColor:UIColor.black, NSAttributedStringKey.font:UIFont.boldSystemFont(ofSize: size)]))
+        attributedText.append(NSAttributedString(string: secondString, attributes: [NSAttributedString.Key.foregroundColor:UIColor.black, NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: size)]))
         
         label.attributedText = attributedText
     }

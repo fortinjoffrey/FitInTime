@@ -25,6 +25,8 @@ extension ListExercicesAutoUpdateController {
             break
         case .update:
             break
+        default:
+            break
         }
     }
     
@@ -38,6 +40,8 @@ extension ListExercicesAutoUpdateController {
             tableView.reloadRows(at: [indexPath!], with: .fade)
         case .move:
             tableView.moveRow(at: indexPath!, to: newIndexPath!)
+        default:
+            break
         }
     }
     

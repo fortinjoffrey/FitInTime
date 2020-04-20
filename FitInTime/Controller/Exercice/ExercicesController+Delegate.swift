@@ -10,7 +10,7 @@ import UIKit
 
 extension ExercicesController: SetsControllerDelegate {
     func didFinishExercice(exercice: Exercice) {
-        guard let row = exercices.index(of: exercice) else { return }
+        guard let row = exercices.firstIndex(of: exercice) else { return }
         exercices[row] = exercice        
         let indexPath = IndexPath(row: row, section: 0)
         tableView.reloadRows(at: [indexPath], with: .automatic)

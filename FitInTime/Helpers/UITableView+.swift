@@ -10,7 +10,7 @@ import UIKit
 
 extension UITableView {
     
-    func dequeuseReusableCell(withIdentifier identifier: String, for indexPath: IndexPath,textLabelText: String?, detailTextLabelText: String?, selectionStyle: UITableViewCellSelectionStyle?, accessoryType: UITableViewCellAccessoryType?) -> UITableViewCell {
+    func dequeuseReusableCell(withIdentifier identifier: String, for indexPath: IndexPath,textLabelText: String?, detailTextLabelText: String?, selectionStyle: UITableViewCell.SelectionStyle?, accessoryType: UITableViewCell.AccessoryType?) -> UITableViewCell {
         
         let cell = self.dequeueReusableCell(withIdentifier: identifier, for: indexPath)
         cell.textLabel?.text = textLabelText
