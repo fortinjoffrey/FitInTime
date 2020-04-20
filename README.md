@@ -2,7 +2,7 @@
 
 FitInTime allows you to track your training, exercices, sets. An automatic timer is triggered for your rest time!
 
-### Functionnalities :
+### Functionalities :
   - Data storage
   - Automatic, interactive timer
   - Performance Summary generated (performances, muscle groups percentage...)
