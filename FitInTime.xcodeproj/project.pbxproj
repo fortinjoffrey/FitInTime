@@ -33,6 +33,15 @@
 		DD5CD28720BC39BF00213BD3 /* CreateExerciceController+UITextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5CD28620BC39BF00213BD3 /* CreateExerciceController+UITextFieldDelegate.swift */; };
 		DD5CD28C20BC4FA500213BD3 /* ExercicesController+ListExercicesAutoUpdateControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5CD28B20BC4FA500213BD3 /* ExercicesController+ListExercicesAutoUpdateControllerDelegate.swift */; };
 		DD5CD28E20BE038F00213BD3 /* ListExercicesAutoUpdateController+Exercices.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5CD28D20BE038F00213BD3 /* ListExercicesAutoUpdateController+Exercices.swift */; };
+		DD6563D4244DCDAA00EB2012 /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = DD6563CB244DCDA800EB2012 /* 2.png */; };
+		DD6563D5244DCDAA00EB2012 /* 4.png in Resources */ = {isa = PBXBuildFile; fileRef = DD6563CC244DCDA800EB2012 /* 4.png */; };
+		DD6563D6244DCDAA00EB2012 /* 5.png in Resources */ = {isa = PBXBuildFile; fileRef = DD6563CD244DCDA800EB2012 /* 5.png */; };
+		DD6563D7244DCDAA00EB2012 /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = DD6563CE244DCDA900EB2012 /* 3.png */; };
+		DD6563D8244DCDAA00EB2012 /* 7.png in Resources */ = {isa = PBXBuildFile; fileRef = DD6563CF244DCDA900EB2012 /* 7.png */; };
+		DD6563D9244DCDAA00EB2012 /* 6.png in Resources */ = {isa = PBXBuildFile; fileRef = DD6563D0244DCDA900EB2012 /* 6.png */; };
+		DD6563DA244DCDAA00EB2012 /* 8.png in Resources */ = {isa = PBXBuildFile; fileRef = DD6563D1244DCDA900EB2012 /* 8.png */; };
+		DD6563DB244DCDAA00EB2012 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = DD6563D2244DCDAA00EB2012 /* 1.png */; };
+		DD6563DC244DCDAA00EB2012 /* 9.png in Resources */ = {isa = PBXBuildFile; fileRef = DD6563D3244DCDAA00EB2012 /* 9.png */; };
 		DD6B489B209BB5740002C07F /* RepsWeightCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6B489A209BB5740002C07F /* RepsWeightCell.swift */; };
 		DD8F03AF20F7FF1700DE9EAB /* BlurryVisualEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8F03AE20F7FF1700DE9EAB /* BlurryVisualEffectView.swift */; };
 		DD8F03B120F808B200DE9EAB /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8F03B020F808B200DE9EAB /* MainView.swift */; };
@@ -104,6 +113,15 @@
 		DD5CD28620BC39BF00213BD3 /* CreateExerciceController+UITextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CreateExerciceController+UITextFieldDelegate.swift"; sourceTree = "<group>"; };
 		DD5CD28B20BC4FA500213BD3 /* ExercicesController+ListExercicesAutoUpdateControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ExercicesController+ListExercicesAutoUpdateControllerDelegate.swift"; sourceTree = "<group>"; };
 		DD5CD28D20BE038F00213BD3 /* ListExercicesAutoUpdateController+Exercices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListExercicesAutoUpdateController+Exercices.swift"; sourceTree = "<group>"; };
+		DD6563CB244DCDA800EB2012 /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
+		DD6563CC244DCDA800EB2012 /* 4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4.png; sourceTree = "<group>"; };
+		DD6563CD244DCDA800EB2012 /* 5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 5.png; sourceTree = "<group>"; };
+		DD6563CE244DCDA900EB2012 /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3.png; sourceTree = "<group>"; };
+		DD6563CF244DCDA900EB2012 /* 7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 7.png; sourceTree = "<group>"; };
+		DD6563D0244DCDA900EB2012 /* 6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 6.png; sourceTree = "<group>"; };
+		DD6563D1244DCDA900EB2012 /* 8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 8.png; sourceTree = "<group>"; };
+		DD6563D2244DCDAA00EB2012 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
+		DD6563D3244DCDAA00EB2012 /* 9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 9.png; sourceTree = "<group>"; };
 		DD6B489A209BB5740002C07F /* RepsWeightCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepsWeightCell.swift; sourceTree = "<group>"; };
 		DD8F03AE20F7FF1700DE9EAB /* BlurryVisualEffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurryVisualEffectView.swift; sourceTree = "<group>"; };
 		DD8F03B020F808B200DE9EAB /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -259,6 +277,22 @@
 			path = CreateExercice;
 			sourceTree = "<group>";
 		};
+		DD6563CA244DCAC100EB2012 /* Screenshots */ = {
+			isa = PBXGroup;
+			children = (
+				DD6563D2244DCDAA00EB2012 /* 1.png */,
+				DD6563CB244DCDA800EB2012 /* 2.png */,
+				DD6563CE244DCDA900EB2012 /* 3.png */,
+				DD6563CC244DCDA800EB2012 /* 4.png */,
+				DD6563CD244DCDA800EB2012 /* 5.png */,
+				DD6563D0244DCDA900EB2012 /* 6.png */,
+				DD6563CF244DCDA900EB2012 /* 7.png */,
+				DD6563D1244DCDA900EB2012 /* 8.png */,
+				DD6563D3244DCDAA00EB2012 /* 9.png */,
+			);
+			path = Screenshots;
+			sourceTree = "<group>";
+		};
 		DD8F03B220F80D6E00DE9EAB /* Labels */ = {
 			isa = PBXGroup;
 			children = (
@@ -385,6 +419,7 @@
 		DDBE6C8A2091BCE700C14200 /* FitInTime */ = {
 			isa = PBXGroup;
 			children = (
+				DD6563CA244DCAC100EB2012 /* Screenshots */,
 				DDBE6C8B2091BCE700C14200 /* AppDelegate.swift */,
 				DDBE6C922091BCE900C14200 /* Assets.xcassets */,
 				DDAB7D4920A0B8F80022CF34 /* Model */,
@@ -489,8 +524,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD6563DC244DCDAA00EB2012 /* 9.png in Resources */,
+				DD6563D5244DCDAA00EB2012 /* 4.png in Resources */,
+				DD6563D6244DCDAA00EB2012 /* 5.png in Resources */,
+				DD6563D4244DCDAA00EB2012 /* 2.png in Resources */,
+				DD6563D8244DCDAA00EB2012 /* 7.png in Resources */,
+				DD6563D7244DCDAA00EB2012 /* 3.png in Resources */,
 				DDBE6C962091BCE900C14200 /* LaunchScreen.storyboard in Resources */,
+				DD6563DA244DCDAA00EB2012 /* 8.png in Resources */,
+				DD6563D9244DCDAA00EB2012 /* 6.png in Resources */,
 				DDBE6C932091BCE900C14200 /* Assets.xcassets in Resources */,
+				DD6563DB244DCDAA00EB2012 /* 1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -45,8 +45,8 @@ class TrainingsAutoUpdateController: UITableViewController, NSFetchedResultsCont
     
     fileprivate func setupNavBar() {
         navigationItem.title = "Entraînements"
-        navigationController?.navigationBar.backgroundColor = .orangeCustom
-        navigationController?.setStatusBarColor(backgroundColor: .orangeCustom)
+        navigationController?.navigationBar.backgroundColor = .mainColor
+        navigationController?.setStatusBarColor(backgroundColor: .mainColor)
         setupPlusButtonInNavBar(selector: #selector(handleAdd))        
     }
     
@@ -56,7 +56,7 @@ class TrainingsAutoUpdateController: UITableViewController, NSFetchedResultsCont
         createTrainingController.isDone = isDone
         createTrainingController.delegate = self
         
-        let navController = UINavigationController(rootViewController: createTrainingController)
+        let navController = CustomNavigationController(rootViewController: createTrainingController)
 //        navController.modalPresentationStyle = .overCurrentContext
         self.present(navController, animated: true, completion: nil)        
     }

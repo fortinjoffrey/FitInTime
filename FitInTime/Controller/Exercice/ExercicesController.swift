@@ -66,7 +66,7 @@ class ExercicesController: UIViewController {
         let listExercicesAutoUpdateController = ListExercicesAutoUpdateController()
         listExercicesAutoUpdateController.training = training
         listExercicesAutoUpdateController.delegate = self
-        let navController = UINavigationController(rootViewController: listExercicesAutoUpdateController)
+        let navController = CustomNavigationController(rootViewController: listExercicesAutoUpdateController)
         present(navController, animated: true, completion: nil)        
     }
     

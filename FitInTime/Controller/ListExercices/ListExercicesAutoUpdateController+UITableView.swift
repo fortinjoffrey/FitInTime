@@ -67,6 +67,17 @@ extension ListExercicesAutoUpdateController: UITableViewDataSource, UITableViewD
             cell.accessoryType = .none
         } else {
             selectedExercices.append(exercice)
+            
+            if (UserDefaults.standard.value(forKey: "automaticAddedAnimationSwitchIsOn") as? Bool == true) {
+                let alertController = UIAlertController(title: "Ajouté", message: nil, preferredStyle: .alert)
+
+                           present(alertController, animated: true, completion: nil)
+
+                           let when = DispatchTime.now() + 0.5
+
+                           DispatchQueue.main.asyncAfter(deadline: when){
+                               alertController.dismiss(animated: true, completion: nil)}
+            }
             cell.accessoryType = .checkmark            
         }
     

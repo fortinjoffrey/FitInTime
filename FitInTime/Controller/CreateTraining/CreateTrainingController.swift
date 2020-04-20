@@ -105,8 +105,8 @@ class CreateTrainingController: UIViewController {
     
     fileprivate func setupNavBar() {
         navigationItem.title = training == nil ? "Créer entraînement" : "Modifier"
-        navigationController?.navigationBar.backgroundColor = .orangeCustom
-        navigationController?.setStatusBarColor(backgroundColor: .orangeCustom)
+        navigationController?.navigationBar.backgroundColor = .mainColor
+        navigationController?.setStatusBarColor(backgroundColor: .mainColor)
         setupCancelButtonInNavBar()
         setupSaveButtonInNavBar(selector: #selector(handleSave))
     }

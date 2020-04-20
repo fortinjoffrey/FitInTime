@@ -67,6 +67,7 @@ class CreateExerciceController: UIViewController {
         
         setupUI()
         setupPanGesture()
+        setupTapGesture()
     }
     
     override func viewDidLayoutSubviews() {
@@ -78,6 +79,11 @@ class CreateExerciceController: UIViewController {
         let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(handleGesture))
         view.addGestureRecognizer(panGestureRecognizer)
         
+    }
+    
+    fileprivate func setupTapGesture() {
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleTap))
+        visualEffectView.addGestureRecognizer(tapGestureRecognizer)        
     }
     
     @objc fileprivate func handleGroupSelection(button: UIButton) {
@@ -102,6 +108,12 @@ class CreateExerciceController: UIViewController {
             popoverController.sourceRect = CGRect(x: self.view.bounds.midX, y: self.view.bounds.midY, width: 0, height: 0)
         }
         present(alertController, animated: true, completion: nil)
+    }
+    
+    @objc fileprivate func handleTap(gesture: UITapGestureRecognizer) {
+        
+        visualEffectView.alpha = 0
+        dismiss(animated: true, completion: nil)
     }
     
     @objc fileprivate func handleGesture(gesture: UIPanGestureRecognizer) {

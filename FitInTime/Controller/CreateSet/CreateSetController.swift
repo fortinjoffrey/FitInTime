@@ -20,10 +20,43 @@ protocol CreateSetControllerDelegate {
 
 class CreateSetController: UIViewController {
     
+    var repsPVRowNbDefault   = 9
+    var weightPVRowNbDefault = 24
+    
+    var durationPVRowNbDefault = 14
+    var speedPVRowNbDefault    = 11
+    
+    var gainageMinPVRowNbDefault = 0
+    var gainageSecPVRowNbDefault = 30
+    
     var trainingIsDone: Bool = false
     var delegate: CreateSetControllerDelegate?
     var exercice: Exercice? {
         didSet {
+            // TO DO
+            // The problem is that we have the value but not the associated row number
+            // When need to tell the selected row number but it is not the same as value. For instance repsPickerData starts at 1 (value) but the row is 0
+            // Need to work on a generic solution
+            // when need to find row number for a specific value
+//            if let lastSet = exercice?.lastSet {
+//
+//                switch exercice?.category {
+//                case "Poids libres","Machines, poulie":
+//                    repsPVRowNbDefault = Int(lastSet.repetitions)
+//                    weightPVRowNbDefault = Int(lastSet.weight)
+//                case "Cardio":
+//                    setupUIForCardio()
+//                    durationPVRowNbDefault = Int(lastSet.duration)
+//                    speedPVRowNbDefault = Int(lastSet.speed)
+//                case "Poids du corps":
+//                    setupUIForBodyweight()
+//                case "Gainage":
+            // need to do some math for duration like in handleValidate case "Gainage"
+//                    gainageMinPVRowNbDefault = Int(lastSet.duration)
+//                default:
+//                    return
+//                }
+//            }
         }
     }
     var mainViewOriginY: CGFloat = 0.0
@@ -31,14 +64,6 @@ class CreateSetController: UIViewController {
     let visualEffectView = BlurryVisualEffectView()
     
     let mainView = MainView()
-    
-    let dismissButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.setBackgroundImage(#imageLiteral(resourceName: "down-arrow").withRenderingMode(.alwaysOriginal), for: .normal)
-        button.addTarget(self, action: #selector(handleCancel), for: .touchUpInside)
-        return button
-    }()
-    
     
     // MARK: Labels
     
@@ -173,6 +198,7 @@ class CreateSetController: UIViewController {
         super.viewDidLoad()
         setupUI()
         setupPanGesture()
+        setupTapGesture()
     }
     
     override func viewDidLayoutSubviews() {
@@ -182,6 +208,16 @@ class CreateSetController: UIViewController {
     fileprivate func setupPanGesture() {
         let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(handleGesture))
         view.addGestureRecognizer(panGestureRecognizer)
+    }
+    
+    fileprivate func setupTapGesture() {
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleTap))
+        visualEffectView.addGestureRecognizer(tapGestureRecognizer)
+    }
+    
+    @objc fileprivate func handleTap(gesture: UITapGestureRecognizer) {
+        visualEffectView.alpha = 0
+        dismiss(animated: true, completion: nil)
     }
     
     @objc fileprivate func handleGesture(gesture: UIPanGestureRecognizer) {
@@ -195,7 +231,6 @@ class CreateSetController: UIViewController {
         if gesture.state == .changed {
             let percentage = translation.y / view.frame.height
             visualEffectView.alpha = 1 - percentage
-            dismissButton.alpha = 1 - percentage
         }
         
         if gesture.state == .ended {
@@ -218,14 +253,11 @@ class CreateSetController: UIViewController {
     
     func setupUI() {
         
-        [visualEffectView, dismissButton, mainView].forEach { view.addSubview($0) }
+        [visualEffectView, mainView].forEach { view.addSubview($0) }
         
         visualEffectView.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
         
         mainView.anchor(top: nil, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: view.frame.height * 0.7)
-        
-        dismissButton.anchor(top: nil, left: nil, bottom: mainView.topAnchor, right: nil, paddingTop: 0, paddingLeft: 0, paddingBottom: 16, paddingRight: 0, width: 25, height: 25)
-        dismissButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         
         mainView.addSubview(validateButton)
         

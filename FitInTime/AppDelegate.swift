@@ -9,6 +9,20 @@
 import UIKit
 import UserNotifications
 
+// Change status bar to white
+class CustomNavigationController: UINavigationController {
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+}
+
+extension UINavigationController {
+    open override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+}
+
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -18,7 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         setupNavBarAppearance()
         setupNotificationRequestAndDelegate()
-        checkIfAutoTimerIsOn()
+        checkUserDefaultsValues()
         
         UIBarButtonItem.appearance(whenContainedInInstancesOf: [UISearchBar.self]).title = "Annuler"
         
@@ -58,9 +72,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 extension AppDelegate: UNUserNotificationCenterDelegate {
     
-    fileprivate func checkIfAutoTimerIsOn() {
+    fileprivate func checkUserDefaultsValues() {
         if UserDefaults.standard.value(forKey: "automaticTimerSwitchIsOn") == nil {
             UserDefaults.standard.set(true, forKey: "automaticTimerSwitchIsOn")
+        }
+        if UserDefaults.standard.value(forKey: "automaticAddedAnimationSwitchIsOn") == nil {
+            UserDefaults.standard.set(true, forKey: "automaticAddedAnimationSwitchIsOn")
         }
     }
     
@@ -69,7 +86,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
         
         navigationBarAppearance.tintColor = .white
         navigationBarAppearance.isTranslucent = false
-        navigationBarAppearance.barTintColor = .orangeCustom
+        navigationBarAppearance.barTintColor = .mainColor
         navigationBarAppearance.prefersLargeTitles = true
         navigationBarAppearance.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
         navigationBarAppearance.largeTitleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]

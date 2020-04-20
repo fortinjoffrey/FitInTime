@@ -32,13 +32,13 @@ class MainTabBarController: UITabBarController {
         let settingsNavController = templateNavController(unselectedImage: #imageLiteral(resourceName: "settings_unselected"), selectedImage: #imageLiteral(resourceName: "settings_selected"),rootViewController: settingsController)
         settingsNavController.tabBarItem.title = "Paramètres"
         
-        tabBar.tintColor = .orangeCustom
+        tabBar.tintColor = .mainColor
         viewControllers = [trainingsNavController, exercicesNavController, timerNavController, settingsNavController]        
     }
     
     fileprivate func templateNavController(unselectedImage: UIImage, selectedImage: UIImage, rootViewController: UIViewController = UIViewController()) -> UINavigationController {
         
-        let navController = UINavigationController(rootViewController: rootViewController)
+        let navController = CustomNavigationController(rootViewController: rootViewController)
         navController.tabBarItem.image = unselectedImage
         navController.tabBarItem.selectedImage = selectedImage
         return navController

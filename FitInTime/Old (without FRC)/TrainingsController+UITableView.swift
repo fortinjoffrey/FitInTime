@@ -55,7 +55,7 @@ extension TrainingsController {
         let editAction = UIContextualAction(style: .normal, title: "Modifier") { (action, view, success) in
             
             let createTrainingController = CreateTrainingController()
-            let navController = UINavigationController(rootViewController: createTrainingController)
+            let navController = CustomNavigationController(rootViewController: createTrainingController)
             
 //            createTrainingController.delegate = self
             

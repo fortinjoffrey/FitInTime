@@ -10,7 +10,7 @@ import UIKit
 
 class NotationPickerView: UIPickerView {
     
-    open let data = [Int16](0...10)
+    public let data = [Int16](0...10)
     var selectedData: Int16 = 5
     var redToGreenMode = true
     

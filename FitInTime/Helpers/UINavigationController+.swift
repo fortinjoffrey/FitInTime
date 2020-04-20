@@ -9,10 +9,7 @@
 import UIKit
 
 extension UINavigationController {    
-    open override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
-    
+
     func setStatusBarColor(backgroundColor: UIColor) {
         let statusBarFrame: CGRect
         if #available(iOS 13.0, *) {

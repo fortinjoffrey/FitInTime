@@ -15,8 +15,8 @@ extension CreateSetController: UIPickerViewDataSource, UIPickerViewDelegate {
         repsPickerData = [Int16](1...100)
         weightPickerData = [Int16](0...200)
         
-        repsPickerView.selectRow(9, inComponent: 0, animated: false)
-        weightPickerView.selectRow(24, inComponent: 0, animated: false)
+        repsPickerView.selectRow(repsPVRowNbDefault, inComponent: 0, animated: false)
+        weightPickerView.selectRow(weightPVRowNbDefault, inComponent: 0, animated: false)
     }
     
     func setupDurationSpeedPickerViews() {
@@ -24,8 +24,8 @@ extension CreateSetController: UIPickerViewDataSource, UIPickerViewDelegate {
         durationPickerData = [Int16](1...90)
         speedPickerData = [Int16](1...32)
         
-        durationPickerView.selectRow(14, inComponent: 0, animated: false)
-        speedPickerView.selectRow(11, inComponent: 0, animated: false)
+        durationPickerView.selectRow(durationPVRowNbDefault, inComponent: 0, animated: false)
+        speedPickerView.selectRow(speedPVRowNbDefault, inComponent: 0, animated: false)
     }
     
     func setupMinutesSecondsPickerViews() {
@@ -33,8 +33,8 @@ extension CreateSetController: UIPickerViewDataSource, UIPickerViewDelegate {
         gainageMinutesPickerData = [Int16](0...30)
         gainageSecondsPickerData = [Int16](0...59)
         
-        gainageMinutesPickerView.selectRow(0, inComponent: 0, animated: false)
-        gainageSecondsPickerView.selectRow(30, inComponent: 0, animated: false)
+        gainageMinutesPickerView.selectRow(gainageMinPVRowNbDefault, inComponent: 0, animated: false)
+        gainageSecondsPickerView.selectRow(gainageSecPVRowNbDefault, inComponent: 0, animated: false)
     }
     
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {

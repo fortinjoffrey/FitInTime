@@ -10,6 +10,7 @@ import UIKit
 
 extension SetsController: CreateSetControllerDelegate {
     func didAddSet(set: Set) {
+        exercice?.lastSet = set
         sets.append(set)
         let indexPath = IndexPath(row: sets.count - 1, section: 0)
         tableView.insertRows(at: [indexPath], with: .automatic)        

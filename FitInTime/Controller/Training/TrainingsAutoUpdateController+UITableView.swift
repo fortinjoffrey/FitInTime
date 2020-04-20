@@ -71,7 +71,7 @@ extension TrainingsAutoUpdateController {
         let editAction = UIContextualAction(style: .normal, title: "Modifier") { (action, view, success) in
             
             let createTrainingController = CreateTrainingController()
-            let navController = UINavigationController(rootViewController: createTrainingController)
+            let navController = CustomNavigationController(rootViewController: createTrainingController)
             
             let training = self.fetchResultsController.object(at: indexPath)
             

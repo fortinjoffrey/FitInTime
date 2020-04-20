@@ -42,7 +42,7 @@ class TrainingsController: UITableViewController {
     @objc private func handleAddTraining() {
         
         let createTrainingController = CreateTrainingController()
-        let navController = UINavigationController(rootViewController: createTrainingController)
+        let navController = CustomNavigationController(rootViewController: createTrainingController)
 
 //        createTrainingController.delegate = self
         

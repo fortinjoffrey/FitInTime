@@ -14,7 +14,25 @@ class SettingsController: UITableViewController {
     let rightDetailCellId = "rightDetailCellId"
     let defaultCellId = "defaultCellId"
     
-    let sectionsAndRowsNumberArray = [[1,2], [2,1]]
+    let sectionsAndRowsNumberArray = [[1,3], [2,1]]
+    
+           let tagNumberDict: [onOffSettingsEnum:Int] = [onOffSettingsEnum.automaticTimer         :0,   onOffSettingsEnum.automaticAddedAnimation :1]
+    
+    enum onOffSettingsEnum {
+        case automaticTimer, automaticAddedAnimation
+       }
+    
+    enum onOffSettings {
+        case title, forKey
+    }
+    
+    let test: [onOffSettingsEnum: [onOffSettings:String]] =
+        [onOffSettingsEnum.automaticTimer:
+            [onOffSettings.title:"Lancer le timer automatiquement",
+             onOffSettings.forKey:"automaticTimerSwitchIsOn"],
+         onOffSettingsEnum.automaticAddedAnimation:
+         [onOffSettings.title:"Notification lors d'un ajout d'exercice",
+          onOffSettings.forKey:"automaticAddedAnimationSwitchIsOn"]]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +50,7 @@ class SettingsController: UITableViewController {
     
     @objc fileprivate func handleReset() {
         UserDefaults.standard.set(nil, forKey: "automaticTimerSwitchIsOn")
+         UserDefaults.standard.set(nil, forKey: "automaticAddedAnimationSwitchIsOn")
         UserDefaults.standard.set(nil, forKey: "DefaultTimerCount")
         tableView.reloadData()
     }
@@ -52,20 +71,23 @@ class SettingsController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.section {
-//        case 0:
-//            let cell = tableView.dequeuseReusableCell(withIdentifier: subtitleCellId, for: indexPath, textLabelText: "Title", detailTextLabelText: "Subtitle", selectionStyle: nil, accessoryType: nil)
-//            return cell
         case 0:
             if indexPath.row == 0 {
                 let cell = tableView.dequeuseReusableCell(withIdentifier: rightDetailCellId, for: indexPath, textLabelText: "Timer par défaut", detailTextLabelText: setupDefaultTimerText(), selectionStyle: nil, accessoryType: nil)
                 return cell
+            } else if indexPath.row == 1 {
+           
+                let cell = tableView.dequeuseReusableCell(withIdentifier: defaultCellId, for: indexPath, textLabelText: test[onOffSettingsEnum.automaticTimer]?[onOffSettings.title], detailTextLabelText: nil, selectionStyle: nil, accessoryType: nil)
+                cell.accessoryView = setupTimerSwitch(value: onOffSettingsEnum.automaticTimer)
+                return cell
             } else {
-                let cell = tableView.dequeuseReusableCell(withIdentifier: defaultCellId, for: indexPath, textLabelText: "Lancer le timer automatiquement", detailTextLabelText: nil, selectionStyle: .none, accessoryType: nil)
-                cell.accessoryView = setupTimerSwitch()
+                let cell = tableView.dequeuseReusableCell(withIdentifier: defaultCellId, for: indexPath, textLabelText: test[onOffSettingsEnum.automaticAddedAnimation]?[onOffSettings.title], detailTextLabelText: nil, selectionStyle: Optional.none, accessoryType: nil)
+                cell.accessoryView = setupTimerSwitch(value: onOffSettingsEnum.automaticAddedAnimation)
                 return cell
             }
+            
         default:
-            let cell = tableView.dequeuseReusableCell(withIdentifier: rightDetailCellId, for: indexPath, textLabelText: "Version", detailTextLabelText: "1.1", selectionStyle: .none, accessoryType: .none)
+            let cell = tableView.dequeuseReusableCell(withIdentifier: rightDetailCellId, for: indexPath, textLabelText: "Version", detailTextLabelText: "1.1", selectionStyle: Optional.none, accessoryType: Optional.none)
             cell.accessoryType = .none
             cell.selectionStyle = .none
             return cell
@@ -86,24 +108,33 @@ class SettingsController: UITableViewController {
         return "1:30"
     }
     
-    fileprivate func setupTimerSwitch() -> UISwitch {
-        let automaticTimerSwitch = UISwitch()
-        if let state = UserDefaults.standard.value(forKey: "automaticTimerSwitchIsOn") as? Bool {
-            automaticTimerSwitch.isOn = state
+    
+    fileprivate func setupTimerSwitch(value: onOffSettingsEnum) -> UISwitch {
+        if let forKey = test[value]?[onOffSettings.forKey] {
+        
+            let swtch = UISwitch()
+                   if let state = UserDefaults.standard.value(forKey: forKey) as? Bool {
+                       swtch.isOn = state
+                   } else {
+                       UserDefaults.standard.set(true, forKey: forKey)
+                       swtch.isOn = true
+                   }
+                   swtch.tag = tagNumberDict[value] ?? -1
+                   swtch.addTarget(self, action: #selector(handleSwitchValueChanged), for: .valueChanged)
+                   return swtch
         } else {
-            UserDefaults.standard.set(true, forKey: "automaticTimerSwitchIsOn")
-            automaticTimerSwitch.isOn = true
-        }
-        automaticTimerSwitch.tag = 0
-        automaticTimerSwitch.addTarget(self, action: #selector(handleSwitchValueChanged), for: .valueChanged)
-        return automaticTimerSwitch
-    }
-    
-    @objc fileprivate func handleSwitchValueChanged( sender: UISwitch) {
-        if sender.tag == 0 {
-            UserDefaults.standard.set(sender.isOn, forKey: "automaticTimerSwitchIsOn")
+            return UISwitch()
         }
     }
     
+    @objc fileprivate func handleSwitchValueChanged(sender: UISwitch) {
+        
+        if let key = tagNumberDict.first(where: {$0.value == sender.tag })?.key {
+            if let forKey =  test[key]?[onOffSettings.forKey] {
+                UserDefaults.standard.set(sender.isOn, forKey: forKey)
+            }
+        }
+        
+    }
     
 }
