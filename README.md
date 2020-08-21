@@ -4,7 +4,7 @@ FitInTime allows you to track your training, exercices, sets. An automatic timer
 
 [Live demo](https://www.youtube.com/watch?v=6pxFXjwlL88)
 
-### Features :
+## Features
   - Data storage
   - Automatic, interactive timer
   - Performance Summary generated (performances, muscle groups percentage...)
@@ -13,14 +13,37 @@ FitInTime allows you to track your training, exercices, sets. An automatic timer
 
 ## Screenshots
 
-<div class="row">
-<img src="FitInTime/Screenshots/1.png" width=45% align="middle">
-<img src="FitInTime/Screenshots/2.png" width=45% align="middle">
-<img src="FitInTime/Screenshots/3.png" width=45% align="middle">
-<img src="FitInTime/Screenshots/4.png" width=45% align="middle">
-<img src="FitInTime/Screenshots/5.png" width=45% align="middle">
-<img src="FitInTime/Screenshots/6.png" width=45% align="middle">
-<img src="FitInTime/Screenshots/7.png" width=45% align="middle">
-<img src="FitInTime/Screenshots/8.png" width=45% align="middle">
-<img src="FitInTime/Screenshots/9.png" width=45% align="middle">
-</div>
+<table style="width:100%">
+  <tr>
+    <th>Workouts list </th>
+    <th>Exercises list</th> 
+  </tr>
+  <tr>
+    <td><img src="FitInTime/Screenshots/1.png" align="middle"></td> 
+    <td><img src="FitInTime/Screenshots/2.png" align="middle"></td> 
+  </tr>
+    <tr>
+    <th>Workout exercises list </th>
+    <th>Performance registration</th> 
+  </tr>
+  <tr>
+    <td><img src="FitInTime/Screenshots/3.png" align="middle"></td> 
+    <td><img src="FitInTime/Screenshots/4.png" align="middle"></td> 
+  </tr>
+  <tr>
+    <th>Performances list </th>
+    <th>Timer</th> 
+  </tr>
+  <tr>
+    <td><img src="FitInTime/Screenshots/5.png" align="middle"></td> 
+    <td><img src="FitInTime/Screenshots/6.png" align="middle"></td> 
+  </tr>
+    <tr>
+    <th>Workout comment and grade </th>
+    <th>Workout summary</th> 
+  </tr>
+  <tr>
+    <td><img src="FitInTime/Screenshots/7.png" align="middle"></td> 
+    <td><img src="FitInTime/Screenshots/8.png" align="middle"></td> 
+  </tr>
+</table>
